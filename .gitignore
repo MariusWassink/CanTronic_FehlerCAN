@@ -1,0 +1,9 @@
+/Debug/
+/settings/
+*.dep
+*.tmp
+/.vscode/
+*.pdf
+*.srec
+*.html
+/trash/
