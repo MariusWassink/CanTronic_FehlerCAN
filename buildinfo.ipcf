@@ -4,7 +4,6 @@
     <name>R5F52618</name>
 </device>
 <includePath>
-    <path>$PROJ_DIR$\src\smc_gen\Config_CMT0</path>
     <path>$PROJ_DIR$\src\smc_gen\Config_PORT</path>
     <path>$PROJ_DIR$\src\smc_gen\general</path>
     <path>$PROJ_DIR$\src\smc_gen\r_bsp</path>
@@ -17,15 +16,6 @@
 <files>
     <group name ="src">
         <group name ="smc_gen">
-            <group name ="Config_CMT0">
-                <path>.\src\smc_gen\Config_CMT0\Config_CMT0.c</path>
-                <path>.\src\smc_gen\Config_CMT0\Config_CMT0.h</path>
-                <path>.\src\smc_gen\Config_CMT0\Config_CMT0_user.c</path>
-            </group>
-        </group>
-    </group>
-    <group name ="src">
-        <group name ="smc_gen">
             <group name ="Config_PORT">
                 <path>.\src\smc_gen\Config_PORT\Config_PORT.c</path>
                 <path>.\src\smc_gen\Config_PORT\Config_PORT.h</path>
@@ -36,7 +26,6 @@
     <group name ="src">
         <group name ="smc_gen">
             <group name ="general">
-                <path>.\src\smc_gen\general\r_cg_cmt.h</path>
                 <path>.\src\smc_gen\general\r_cg_hardware_setup.c</path>
                 <path>.\src\smc_gen\general\r_cg_macrodriver.h</path>
                 <path>.\src\smc_gen\general\r_cg_port.h</path>

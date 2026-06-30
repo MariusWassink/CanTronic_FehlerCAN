@@ -20,7 +20,6 @@ Includes
 #include "r_cg_macrodriver.h"
 #include "Pin.h"
 #include "Config_PORT.h"
-#include "Config_CMT0.h"
 
 /***********************************************************************************************************************
 Macro definitions (Register bit)

@@ -22,7 +22,6 @@ Includes
 ***********************************************************************************************************************/
 #include "r_cg_macrodriver.h"
 #include "Config_PORT.h"
-#include "Config_CMT0.h"
 #include "r_smc_cgc.h"
 #include "r_smc_interrupt.h"
 /* Start user code for include. Do not edit comment generated here */
@@ -72,7 +71,6 @@ void R_Systeminit(void)
 
     /* Set peripheral settings */
     R_Config_PORT_Create();
-    R_Config_CMT0_Create();
 
 #if BSP_CFG_BOOTLOADER_PROJECT == 0
     /* Disable the following codes in the bootloader project. */
