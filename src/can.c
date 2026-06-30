@@ -39,10 +39,6 @@ can_info_t can0_p_info =
         .status = RESET_VALUE,
 };
 
-static void sende_heartbeat(void);
-
-#define CH_FZG                  1 // CH_1 = Fahrzeug CAN
-
 /* Acceptance filter array parameters */
 canfd_afl_entry_t g_canfd_afl[CANFD_CFG_AFL_CH0_RULE_NUM] =
 {
@@ -605,8 +601,7 @@ fsp_err_t init_can(void)
 fsp_err_t function_CAN(void)
 {
   fsp_err_t err;
-  time_t now = Timer_get_time();
-
+ 
   can_frame_t frame;
   static volatile uint32_t id_001_empfangen = 0;
   static volatile uint32_t id_020_empfangen = 0;
@@ -636,30 +631,7 @@ fsp_err_t function_CAN(void)
     }
   }
 
-  static uint64_t last_time = 0;
-  if (now / 1000 != last_time / 1000)
-  {
-    //sende_heartbeat();
-  }
-
-  last_time = now;
-
   return err;
-}
-
-// CHANGE_PANEL: CAN-Nachrichten pro Panel zuweisen
-static void sende_heartbeat(void)
-{
-  can_frame_t frame = {
-      .id = ID_HEARTBEAT,
-      .data_length_code = 2,
-      //  .options = CANFD_FRAME_OPTION_FD,
-  };
-
-  frame.data[0] = HARDWARE_VERSION; // Hardwarestand
-  frame.data[1] = SOFTWARE_VERSION; // Softwarestand
-
-  //R_CAN_TxSet(CH_FZG, 1, &frame);
 }
 
 void canfd_callback(can_callback_args_t *p_args)
